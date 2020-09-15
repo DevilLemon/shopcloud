@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.io.Serializable;
+import java.util.List;
 
 @RestController
 public class LoginController {
@@ -24,13 +25,14 @@ public class LoginController {
         //查询数据库登录用户信息
         User user = userService.login_check(name);
         System.out.println("视图中心从数据中心获取的账号：" + user);
+        //List <> RoleList = ;
+        System.out.println("登录账号的角色：" + user);
+        //List <> PermList = ;
+        System.out.println("登录账号的权限：" + user);
         //验证密码是否相等
         if (user.getPassword().equals(password)){
             session.setAttribute("user", user);
-            User test = (User)session.getAttribute("user");
-            System.out.println("缓存获取：" + test);
-            System.out.println("名字输出：" + test.getName());
-            System.out.println("密码输出：" + test.getPassword());
+            System.out.println("Session已保存的用户信息：" + session.getAttribute("user"));
             return new ModelAndView("index");
         }
         else{

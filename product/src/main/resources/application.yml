@@ -15,3 +15,7 @@ spring:
     password: 92960504
     url: jdbc:oracle:thin:@127.0.0.1:1521/orcl #jdbc:mysql://localhost:3307/orcl
     driver-class-name: oracle.jdbc.OracleDriver #com.mysql.jdbc.Driver
+ribbon:
+  eager-load:
+    enabled:  true
+    clients:  product

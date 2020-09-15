@@ -37,3 +37,20 @@ eureka:
 feign:
   hystrix:
     enabled: true
+  client:
+    config:
+      remote-service:           #服务名，填写default为所有服务
+        connectTimeout: 5000
+        readTimeout: 5000
+ribbon:
+  eager-load:
+    enabled:  true
+    clients:  provide
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
