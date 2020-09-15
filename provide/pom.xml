@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.my</groupId>
+		<artifactId>shopcloud</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>provide</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-httpclient</artifactId>
+			<version>10.0.1</version>
+		</dependency>
+		<dependency> <!-- hystrix -->
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+
+		<dependency> <!-- Mybatis_Pagehelper -->
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.13</version>
+		</dependency>
+		<dependency> <!-- Thymeleaf -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>2.2.7.RELEASE</version>
+		</dependency>
+		<dependency> <!-- Thymeleaf_Shiro -->
+			<groupId>com.github.theborakompanioni</groupId>
+			<artifactId>thymeleaf-extras-shiro</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency> <!-- Thymeleaf_legacyhtml5 -->
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
+		<dependency> <!-- Bootstrap-->
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
+		<dependency> <!-- Jquery-->
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency> <!-- Vue_js-->
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>vue</artifactId>
+			<version>2.6.11</version>
+		</dependency>
+		<dependency> <!-- Vue_router -->
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>vue-router</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency> <!-- Fetch_Vue -->
+			<groupId>com.47deg</groupId>
+			<artifactId>fetch_2.12</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency> <!-- Axios_Vue -->
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>axios</artifactId>
+			<version>0.18.1</version>
+		</dependency>
+		<dependency> <!-- POI -->
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
+		<dependency> <!-- hutool -->
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.3.5</version>
+		</dependency>
+		<dependency> <!-- fast_json -->
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.68</version>
+		</dependency>
+
+        <dependency> <!-- Redis -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>2.2.7.RELEASE</version>
+		</dependency>
+		<dependency> <!-- MongoDB -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency> <!-- Lombok -->
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version> <!-- 可不指定 -->
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>19.7.0.0</version>
+		</dependency>
+	</dependencies>
+</project>
