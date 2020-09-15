@@ -1,5 +1,5 @@
 package com.example.provide;
-
+/*
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,4 +15,4 @@ public class AutoStart {
             //test.AutoStart(portList.get(i));
         }
     }
-}
+}*/
