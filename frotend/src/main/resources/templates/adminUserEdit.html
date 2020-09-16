@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script th:src="@{./webjars/jquery/2.2.4/dist/jquery.min.js}" type="text/javascript"></script>
+    <script th:src="@{./webjars/bootstrap/3.3.7/js/bootstrap.js}" type="text/javascript"></script>
+    <script th:src="@{./webjars/vue/2.6.11/dist/vue.min.js}" type="text/javascript"></script>
+    <script th:src="@{./webjars/vue-router/2.6.0/dist/vue-router.min.js}" type="text/javascript"></script>
+    <script th:src="@{./js/axios.min.js}" type="text/javascript"></script>
+    <link th:href="@{./webjars/bootstrap/3.3.7/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{./css/common.css}" rel="stylesheet" type="text/css">
+    <title>管理员的用户编辑界面</title>
+</head>
+<body>
+<div id="adminUserEdit">
+    <h2>Shiro_Admin_User_Edit</h2>
+    <nav>
+        <a href="index" class="btn btn-info">主页</a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                VIP功能<span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="/userGoodList">用户商品界面</a></li>
+                <li><a th:href="@{/userCartList}">用户购物车界面</a></li>
+                <li><a th:href="@{/userOrderList}">用户订单界面</a></li>
+                <li><a th:href="@{/userOwnerList}">用户个人信息界面</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                Admin功能<span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a th:href="@{/adminGoodList}">管理商品界面</a></li>
+                <li><a th:href="@{/adminUserList}">管理用户界面</a></li>
+                <li><a th:href="@{/adminRoleList}">管理角色界面</a></li>
+                <li><a th:href="@{/adminPermList}">管理权限界面</a></li>
+                <li><a th:href="@{/adminOrderList}">管理订单界面</a></li>
+            </ul>
+        </div>
+        <span th:text="'Admin，欢迎进入用户编辑界面'"></span>
+        <a href="javascript:location.reload()" class="btn btn-info">刷新</a>
+        <a href="javascript:history.back(-1)" class="btn btn-info">返回上一页</a>
+        <a href="logout" class="btn btn-info">退出</a>
+    </nav>
+    <!--用户编辑-->
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">性别：</div>
+            <div class="col-md-8">
+                <input v-model="userInfo.sex" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">民族：</div>
+            <div class="col-md-8">
+                <input v-model="userInfo.nation" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">手机号码：</div>
+            <div class="col-md-8">
+                <input v-model="userInfo.phone" type="number" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">地址：</div>
+            <div class="col-md-8">
+                <input v-model="userInfo.address" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" @click="update" class="btn btn-primary btn-block">保存修改
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" @click="cancel" class="btn btn-primary btn-block">取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/adminUserEdit.js" th:src="@{/js/adminUserEdit.js}" type="text/javascript"></script>
+</body>
+</html>

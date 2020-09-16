@@ -1,0 +1,52 @@
+server:
+  #port: 8088 #端口号
+  servlet:
+    context-path: /
+debug: true #是否Debug启动
+spring:
+  application:
+    name: goodprovide
+  datasource: #数据库连接
+    username: SYSTEM
+    password: 92960504
+    url: jdbc:oracle:thin:@127.0.0.1:1521/orcl #jdbc:mysql://localhost:3307/orcl
+    driver-class-name: oracle.jdbc.OracleDriver #com.mysql.jdbc.Driver
+  thymeleaf: #thymeleaf配置
+    servlet:
+      content-type: text/html
+    encoding: UTF-8
+    mode: LEGACYHTML5 #非严格HTML5模板审查
+    prefix: classpath:/templates/ #thymeleaf模板名前缀,即文件夹路径
+    suffix: .html #模板后缀
+    check-template-location: true #检查模板路径是否存在
+    cache: false #清除thymeleaf缓存
+  resources: #js,css,img静态资源寻路配置
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,"/",file:${spring.servlet.multipart.location}
+  servlet:
+    multipart:
+      location: /E:/QRTest/ #上传文件的保存地址/resources/static/file/
+      max-file-size: 1024MB #上传文件的可存大小设定
+      max-request-size: 1024MB
+      enabled: true #是否支持多文件上传
+      file-size-threshold: 0B #文件写入磁盘的阈值g
+      resolve-lazily: false #是否在文件或参数访问时延迟解析多部分请求
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      remote-service:           #服务名，填写default为所有服务
+        connectTimeout: 5000
+        readTimeout: 5000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000

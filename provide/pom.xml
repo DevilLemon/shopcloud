@@ -8,6 +8,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>provide</artifactId>
+	<modules>
+		<module>goodprovide</module>
+	</modules>
+	<packaging>pom</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -32,6 +36,7 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.13</version>
 		</dependency>
+
 		<dependency> <!-- Thymeleaf -->
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -77,6 +82,7 @@
 			<artifactId>axios</artifactId>
 			<version>0.18.1</version>
 		</dependency>
+
 		<dependency> <!-- POI -->
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
@@ -86,7 +92,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
-
 		<dependency> <!-- hutool -->
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>

@@ -11,7 +11,7 @@ zuul:
   #定义路由列表
   routes:
     eureka-server-static:
-    #接口A
+    #接口A 数据网关
     api-a:
       #前缀地址定义
       path: /api-data/**
@@ -19,7 +19,7 @@ zuul:
       serviceId: product
       #旧Session信息保留
       sensitiveHeaders: "*"
-    #接口B
+    #接口B 视图网关
     api-b:
       path: /api-view/**
       serviceId: provide

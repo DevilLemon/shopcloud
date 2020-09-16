@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+		<groupId>com.my</groupId>
+		<artifactId>shopcloud</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<artifactId>frotend</artifactId>
+	<dependencies>
+		<dependency> <!-- Thymeleaf -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>2.2.7.RELEASE</version>
+		</dependency>
+		<dependency> <!-- Thymeleaf_Shiro -->
+			<groupId>com.github.theborakompanioni</groupId>
+			<artifactId>thymeleaf-extras-shiro</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency> <!-- Thymeleaf_legacyhtml5 -->
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
+		<dependency> <!-- Bootstrap-->
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
+		<dependency> <!-- Jquery-->
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency> <!-- Vue_js-->
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>vue</artifactId>
+			<version>2.6.11</version>
+		</dependency>
+		<dependency> <!-- Vue_router -->
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>vue-router</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency> <!-- Fetch_Vue -->
+			<groupId>com.47deg</groupId>
+			<artifactId>fetch_2.12</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency> <!-- Axios_Vue -->
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>axios</artifactId>
+			<version>0.18.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+		</dependency>
+	</dependencies>
+</project>
