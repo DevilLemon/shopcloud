@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -16,8 +18,17 @@ public class UserService {
         System.out.println("服务获取从数据中心返回的：" + feign.login_check(name));
         return feign.login_check(name);
     };
-    //User部分
-
-    //Admin部分
-
+    public String register(User user){
+        feign.register(user);
+        return "success";
+    }; //注册公用
+    /*User findPassByName(String name); //查询USER_PASS
+    Long getUserID(String name); //查询USER_ID公用
+    //Admin专用
+    List<User> adminUserList();
+    void updateUser(User user);
+    void resetPass(Long userid);
+    void deleteUser(Long userid);
+    UserInfo getUserInfo(Long userid);
+    void updateUserInfo(UserInfo userInfo);*/
 }

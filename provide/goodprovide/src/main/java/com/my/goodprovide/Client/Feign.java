@@ -13,10 +13,15 @@ import java.util.List;
 
 @FeignClient(value = "PRODUCT",fallback = Hystrix.class)
 public interface Feign {
-    @GetMapping("/userGood")
-    List<Good> goodList();
-    @PostMapping("/adminGood")
-    int addGood(@RequestBody Good good);
+    //公用部分
     @PostMapping("/login")
     User login_check(@RequestParam("name") String name);
+    @PostMapping("/register")
+    User register(@RequestBody User user);
+    //User部分
+    @GetMapping("/userGood")
+    List<Good> goodList();
+    //Admin部分
+    @PostMapping("/adminGood")
+    int addGood(@RequestBody Good good);
 }

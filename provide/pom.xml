@@ -10,6 +10,7 @@
 	<artifactId>provide</artifactId>
 	<modules>
 		<module>goodprovide</module>
+		<module>admin</module>
 	</modules>
 	<packaging>pom</packaging>
 	<dependencies>

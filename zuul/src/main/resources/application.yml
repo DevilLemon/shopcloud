@@ -11,16 +11,18 @@ zuul:
   #定义路由列表
   routes:
     eureka-server-static:
-    #接口A 数据网关
-    api-a:
-      #前缀地址定义
-      path: /api-data/**
-      #后缀地址定义：服务名
-      serviceId: product
-      #旧Session信息保留
-      sensitiveHeaders: "*"
-    #接口B 视图网关
-    api-b:
+    api-a: #接口A 数据网关
+      path: /api-data/** #前缀地址定义
+      serviceId: product #后缀地址定义：服务名
+      sensitiveHeaders: "*" #旧Session信息保留
+    api-b: #接口B User视图网关
       path: /api-view/**
-      serviceId: provide
+      serviceId: goodprovide,admin
       sensitiveHeaders: "*"
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
