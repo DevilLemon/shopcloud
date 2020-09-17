@@ -7,4 +7,5 @@ import java.util.List;
 public interface GoodService {
     List<Good> userGoodList();
     int addGood(Good good);
+    Good getGood(Long goodid);
 }

@@ -20,4 +20,8 @@ public class GoodServiceImpl implements GoodService {
     public int addGood(Good good) {
         return goodMapper.addGood(good);
     }
+    @Override
+    public Good getGood(Long goodid) {
+        return goodMapper.getGood(goodid);
+    }
 }

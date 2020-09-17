@@ -27,10 +27,11 @@ public class UserGoodController {
         System.out.println("获取数据的服务端口：" + port);
         return userGoodInfo;
     }
-    @PostMapping("/adminGood")
-    public String add(@RequestBody Good good) throws Exception {
-        System.out.println("要添加的商品:" + good);
-        goodService.addGood(good);
-        return "Success";
+    @GetMapping("/userGetGood")
+    public Good get(@RequestBody Long goodid) throws Exception {
+        System.out.println("视图中心查询的商品ID:" + goodid);
+        Good good = goodService.getGood(goodid);
+        System.out.println("视图中心查询到的商品返回:" + good);
+        return good;
     }
 }

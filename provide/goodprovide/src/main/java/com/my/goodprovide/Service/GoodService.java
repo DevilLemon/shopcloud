@@ -12,5 +12,5 @@ public class GoodService {
     @Autowired
     Feign feign;
     public List<Good> userGoodList() {return feign.goodList();}
-    public int addGood(Good good) {return feign.addGood(good);}
+    public Good getGood(Long goodid) {return feign.getGood(goodid);}
 }

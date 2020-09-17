@@ -3,11 +3,9 @@ package com.my.product.Controller;
 import com.my.product.MyObject.User;
 import com.my.product.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RefreshScope
 @RestController
 public class LoginController {
     @Autowired

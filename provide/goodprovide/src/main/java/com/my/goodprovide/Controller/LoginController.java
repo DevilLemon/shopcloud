@@ -3,9 +3,7 @@ package com.my.goodprovide.Controller;
 import com.my.goodprovide.Service.UserService;
 import com.my.goodprovide.pobject.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -15,12 +13,14 @@ public class LoginController {
     @Autowired
     private UserService userService;
     @PostMapping("/login")
-    public String login_check(HttpSession session,String name, String password) {
-        //查询数据库登录用户信息
-        User user = userService.login_check(name);
+    public int login_check(HttpSession session, @RequestBody User getuser) {
+        System.out.println("请求拦截用户名：" + getuser.getName());
+        System.out.println("请求拦截密码：" + getuser.getPassword());
+        User user = userService.login_check(getuser.getName());
         System.out.println("视图中心从数据中心获取的账号：" + user);
+        int result = 0;
         //验证密码是否相等
-        if (user.getPassword().equals(password)){
+        if (user.getPassword().equals(getuser.getPassword())){
             session.setAttribute("user", user);
             System.out.println("Session已保存的用户信息：" + session.getAttribute("user"));
             //List <role> RoleList = userService.getRole(name);
@@ -29,10 +29,12 @@ public class LoginController {
             //List <perm> PermList = userService.GetPerm(name);
             //System.out.println("获取权限：" + PermList);
             //session.setAttribute("perm", PermList);
-            return "success";
+            result = 1;
+            return result;
         }
         else{
-            return "false";
+            result = 2;
+            return result;
         }
         }
     @GetMapping("/logout")

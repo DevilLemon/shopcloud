@@ -18,11 +18,10 @@ var vue = new Vue({
     methods: {
         get: function () {
             var goodid = getUrlParms("goodid");
-            var url = "userGood/" + goodid;
-            var test = goods.toString();
-            var w = test.parseJSON();
-            console.log(goods.toString());
-            axios.get(url).then(function(response) {
+            var url = "http://127.0.0.1:8040/api-view/userGetGood";
+            console.log("准备获取商品详情：" + goodid);
+            axios.get(url,goodid,
+                {headers:{'Content-Type':'application/JSON;charset=UTF-8'}}).then(function(response) {
                 console.log("get数据:" + JSON.stringify(response));
                 vue.goodInfo = response.data;
                 vue.goodInfo.allpay = response.data.num * response.data.pay;

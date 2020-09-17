@@ -22,4 +22,11 @@ public class UserGoodController{
         goodService.addGood(good);
         return "Success";
     }
+    @GetMapping("/userGetGood")
+    public Good get(@RequestBody Long goodid) throws Exception {
+        System.out.println("数据中心查询商品ID:" + goodid);
+        Good good = goodService.getGood(goodid);
+        System.out.println("数据中心查询到的商品返回:" + good);
+        return good;
+    }
 }

@@ -18,17 +18,17 @@
         <span><a th:href="@{./login}">游客你好，点击此处登录</a></span>
         <span><a th:href="@{./register}">若无账号，点击此处注册</a></span>
     </div>
-    <div id="haveLogin" class="loginDiv">
-        <span th:text="'欢迎回归,您的权限可使用以下功能'"></span>
+    <div id="haveLogin" th:if="${session.user != null}" class="loginDiv">
+        <span th:text="${session.user.name} + '欢迎回归,您的权限可使用以下功能'"></span>
         <a href="index" class="btn btn-info">主页</a>
         <div class="btn-group">
             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                 VIP功能<span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="./userGoodList">用户商品界面</a></li>
-                <li><a href="./userCartList">用户购物车界面</a></li>
-                <li><a href="./userOrderList">用户订单界面</a></li>
-                <li><a href="./userOwnerList">用户个人信息界面</a></li>
+                <li><a th:href="@{./userGoodList}">用户商品界面</a></li>
+                <li><a th:href="@{./userCartList}">用户购物车界面</a></li>
+                <li><a th:href="@{./userOrderList}">用户订单界面</a></li>
+                <li><a th:href="@{./userOwnerList}">用户个人信息界面</a></li>
             </ul>
         </div>
         <div class="btn-group">
